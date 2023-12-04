@@ -5,8 +5,8 @@ import { BrowserRouter } from "react-router-dom";
 function App() {
   return (
     <BrowserRouter>
-      <div className="app"></div>
-        <Header/>
+      <div className="app">
+        <Header />
       </div>
     </BrowserRouter>
     
