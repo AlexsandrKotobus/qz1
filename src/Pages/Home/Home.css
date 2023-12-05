@@ -16,6 +16,7 @@
     align-self: center;
     padding: 8px;
 }
+
 @media (max-width: 800px) {
     .content{
         flex-direction: column-reverse;
@@ -31,3 +32,16 @@
     }
     
 }
+
+.settings__select{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    width: 100%;
+    float: 0.8;
+    justify-content: space-evenly;
+
+}
+/* .tf{
+    margin-bottom: 25px;
+} */
