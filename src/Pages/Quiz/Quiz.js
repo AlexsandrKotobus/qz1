@@ -1,12 +1,12 @@
 ﻿import React, { useEffect, useState } from 'react';
 import { CircularProgress } from '@mui/material';
 import "./Quiz.css";
-import Qestion from'../../components/Qestion/Qestion.js';
+import Question from'../../components/Question/Question.js';
 
 
-const Quiz = ({name, score, questions, setQestions, setScore}) => {
+const Quiz = ({name, score, questions, setQuestions, setScore}) => {
     const [options, setOptions] = useState()
-    const [currentQues, setCurrentQues] = useState(0)
+    const [currQues, setCurrQues] = useState(0)
 
 
 
@@ -15,13 +15,13 @@ const Quiz = ({name, score, questions, setQestions, setScore}) => {
         setOptions(
             questions &&
             handleShuffle([
-                questions[currentQues]?.correct_answer,
-                ...questions[currentQues]?.incorrect_answers,
+                questions[currQues]?.correct_answer,
+                ...questions[currQues]?.incorrect_answers,
             ]))
     }, [questions]);
-    console.log(questions[currentQues]?.correct_answer)
-    console.log(questions[currentQues]?.incorrect_answers)
-    const arr = [questions[currentQues]?.correct_answer, questions[currentQues]?.incorrect_answers];
+    console.log(questions[currQues]?.correct_answer)
+    console.log(questions[currQues]?.incorrect_answers)
+    const arr = [questions[currQues]?.correct_answer, questions[currQues]?.incorrect_answers];
     console.log(arr)
     //проверка, как перетасовался массив вопросов
     console.log('2 ', options);
@@ -38,12 +38,22 @@ const Quiz = ({name, score, questions, setQestions, setScore}) => {
             {questions ? (
                  <>
                  <div className='quizInfo'>
-                    <span>{questions[currentQues].category}</span>
+                    <span>{questions[currQues].category}</span>
                     <span>Score : {score}</span>
                   
                   </div>
                   
-                  <Qestion />
+                  <Question 
+                    currQues = {currQues}
+                    setCurrQues = {setCurrQues}
+                    questions = {questions}
+                    options = {options}
+                    correct = {questions[currQues]?.correct_answer}
+                    score={score}
+                    setScore = {setScore}
+                    setQuestions = {setQuestions}
+                  
+                  />
 
                   </> ) : (<CircularProgress 
                     style={{margin: 100}}
