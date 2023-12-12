@@ -18,7 +18,7 @@ const Quiz = ({name, score, questions, setQuestions, setScore}) => {
                 questions[currQues]?.correct_answer,
                 ...questions[currQues]?.incorrect_answers,
             ]))
-    }, [questions]);
+    }, [questions, currQues]);
     console.log(questions[currQues]?.correct_answer)
     console.log(questions[currQues]?.incorrect_answers)
     const arr = [questions[currQues]?.correct_answer, questions[currQues]?.incorrect_answers];
@@ -26,8 +26,8 @@ const Quiz = ({name, score, questions, setQuestions, setScore}) => {
     //проверка, как перетасовался массив вопросов
     console.log('2 ', options);
     // программа ПЕРЕТАСОВКИ элементов массива  -сейчас 1 эл правильный, ост - рандомно
-    const handleShuffle = (optionss) =>{
-        return optionss.sort(()=> Math.random() - 0.5);
+    const handleShuffle = (options) =>{
+        return options.sort(()=> Math.random() - 0.5);
     };
     
     return <div className='quiz'> 
