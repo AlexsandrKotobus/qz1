@@ -55,6 +55,10 @@ function App() {
             />
           </Route>
           <Route path ="/result" exact>
+            <Result  name={name} score={score}
+            
+
+            />
             <Result />
           </Route>
         </Switch>

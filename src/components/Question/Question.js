@@ -14,44 +14,36 @@ const Question = ({
     correct,
     setScore,
     score,
-    setQuestions,
+    setQestions,
+    
 }) => {
     const [selected, setSelected] = useState()
     const [error, setError] = useState(false)
+    const history = useHistory();
 
     //функция выбора singleQuestion
 const handelSelect = (i) =>{
-    if(selected === i && selected === correct){
-        return 'select';
-    }
-    else if(selected === i && selected !== correct){
-        return 'wrong';
-    }
-    else if(i === correct) {
-        return 'select';
+    if(selected === i && selected === correct) return "select";
+    else if(selected === i && selected !== correct) return "wrong";
+    else if(i === correct)  return "select";
     }
 
-};
-const history = useHistory();
+
 const handleCheck = (i) => {
     setSelected(i);
     if (i === correct) setScore(score + 1)
-    setScore(false);
+    setError(false)
 };
 const handleNext =() => {
     if(currQues > 8 ){
-        history.push('/result');
-    }
-    else if(selected){
+        history.push("/result");
+    } else if(selected){
         setCurrQues(currQues + 1)
         setSelected()
-    } else{
-        setError("Please selectet an optian first")
-
-    }
+    } else setError("Please selectet an optian first");
 };
 
-const handleQuit=()=>{}
+const handleQuit=()=>{};
 
 
 

@@ -4,11 +4,9 @@ import "./Quiz.css";
 import Question from'../../components/Question/Question.js';
 
 
-const Quiz = ({name, score, questions, setQuestions, setScore}) => {
-    const [options, setOptions] = useState()
-    const [currQues, setCurrQues] = useState(0)
-
-
+const Quiz = ({name, questions, score, setScore, setQuestions }) => {
+    const [options, setOptions] = useState();
+    const [currQues, setCurrQues] = useState(0);
 
     useEffect(() =>{
         console.log('1 ',questions);
@@ -17,23 +15,21 @@ const Quiz = ({name, score, questions, setQuestions, setScore}) => {
             handleShuffle([
                 questions[currQues]?.correct_answer,
                 ...questions[currQues]?.incorrect_answers,
-            ]))
-    }, [questions, currQues]);
+            ]));
+    }, [currQues, questions]);
     console.log(questions[currQues]?.correct_answer)
     console.log(questions[currQues]?.incorrect_answers)
-    const arr = [questions[currQues]?.correct_answer, questions[currQues]?.incorrect_answers];
-    console.log(arr)
+    // const arr = [questions[currQues]?.correct_answer, questions[currQues]?.incorrect_answers];
+    // console.log(arr)
     //проверка, как перетасовался массив вопросов
     console.log('2 ', options);
     // программа ПЕРЕТАСОВКИ элементов массива  -сейчас 1 эл правильный, ост - рандомно
-    const handleShuffle = (options) =>{
+    const handleShuffle = (options) => {
         return options.sort(()=> Math.random() - 0.5);
     };
     
     return <div className='quiz'> 
-        <span className='subtitle'>
-            Welcome, {name}!
-            </span>
+        <span className='subtitle'> Welcome, {name}! </span>
 
             {questions ? (
                  <>

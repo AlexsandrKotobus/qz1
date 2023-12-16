@@ -27,7 +27,8 @@ const handleSubmit = ()=>{
         setError(false)
         // fetchQuestions(category, difficulty); - функция получения ответов на вопросы
         fetchQuestions(category, difficulty);
-        history.push("/quiz"); //history - hook
+        // history - hook
+        history.push("/quiz"); 
     }
 }
 
