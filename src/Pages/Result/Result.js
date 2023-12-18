@@ -17,7 +17,7 @@ const Result = ({name, score}) => {
     return (
         <div className='result'>
             <span className='title'>Final score: {score}</span>
-            Result Page
+            
         </div>
     );
 }

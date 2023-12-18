@@ -58,7 +58,6 @@ function App() {
             <Result  name={name} score={score}
 
             />
-            <Result />
           </Route>
         </Switch>
       </div>
