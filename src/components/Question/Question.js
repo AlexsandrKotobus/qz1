@@ -14,7 +14,7 @@ const Question = ({
     correct,
     setScore,
     score,
-    setQestions,
+    // setQestions,
     
 }) => {
     const [selected, setSelected] = useState()
@@ -75,7 +75,7 @@ const handleQuit=()=>{};
                 >Quit</Button>
                 <Button
                     variant='contained'
-                    color='secondary'
+                    color='primary'
                         size='large'
                         style={{width: 185}}
                         onClick={handleNext}
