@@ -27,7 +27,7 @@ const Quiz = ({name, questions, score, setScore, setQuestions }) => {
     const handleShuffle = (options) => {
         return options.sort(()=> Math.random() - 0.5);
     };
-    
+        
     return <div className='quiz'> 
         <span className='subtitle'> Welcome, {name}! </span>
 
