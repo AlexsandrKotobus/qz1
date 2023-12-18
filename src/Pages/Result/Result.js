@@ -1,7 +1,9 @@
 ﻿import React, { useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 
+
 const Result = ({name, score}) => {
+    console.log('name, score::  ',name, score)
     const history = useHistory()
     useEffect(()=>{
         if(!name){
